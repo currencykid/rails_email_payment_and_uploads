@@ -1,2 +1,33 @@
-%h1 Welcome to the app
-%p this is a new app we created
+- if current_user
+  %h4 Welcome: 
+  .user= current_user.email 
+- else
+  .jumbotron
+    %h2 Welcome to the photo app!
+    .lead "You'll love it!" 
+  #plans
+    .row
+      .clearfix.box.panel.panel-default
+        .col-lg-8.plan
+          .panel-body
+            %h2 Premium Plan
+            .price
+              $10
+            .features
+              %ul
+                %li Unlimited uploads
+                %li Responsive design
+                %li Access anywhere
+            %p= link_to "Sign up", new_user_registration_path, class: "btn btn-primary sign-up"  
+      .clearfix.box.panel.panel-default
+        .col-lg-8.plan
+          .panel-body
+            %h2 Amaze Plan
+            .price
+              $10
+            .features
+              %ul
+                %li Unlimited uploads
+                %li Responsive design
+                %li Access anywhere
+            %p= link_to "Sign up", new_user_registration_path, class: "btn btn-primary sign-up"  
