@@ -1,33 +1,42 @@
-- if current_user
-  %h4 Welcome: 
-  .user= current_user.email 
-- else
+- if current_user 
+  %h3 Welcome
+  .user= current_user.email
+-else 
   .jumbotron
-    %h2 Welcome to the photo app!
-    .lead "You'll love it!" 
-  #plans
+    %h2 Welcome to the app
+    .lead You'll love it
+  .container
     .row
-      .clearfix.box.panel.panel-default
-        .col-lg-8.plan
-          .panel-body
-            %h2 Premium Plan
-            .price
-              $10
-            .features
-              %ul
-                %li Unlimited uploads
-                %li Responsive design
-                %li Access anywhere
-            %p= link_to "Sign up", new_user_registration_path, class: "btn btn-primary sign-up"  
-      .clearfix.box.panel.panel-default
-        .col-lg-8.plan
-          .panel-body
-            %h2 Amaze Plan
-            .price
-              $10
-            .features
-              %ul
-                %li Unlimited uploads
-                %li Responsive design
-                %li Access anywhere
-            %p= link_to "Sign up", new_user_registration_path, class: "btn btn-primary sign-up"  
+      .col-md-12
+        .col-sm-4.col-lg-4.col-md-4
+          .thumbnail
+            .caption
+              %h4.pull-right $24.99
+              %h4
+                %a First Product
+              %p See more snippets 
+              .ratings
+                %p.pull-right 15 reviews
+            = link_to "Sign up", new_user_registration_path, class: "btn btn-primary signup" 
+
+        .col-sm-4.col-lg-4.col-md-4
+          .thumbnail
+            .caption
+              %h4.pull-right $20.99
+              %h4
+                %a First Product
+              %p See more snippets 
+              .ratings
+                %p.pull-right 15 reviews
+            = link_to "Sign up", new_user_registration_path, class: "btn btn-primary signup" 
+
+        .col-sm-4.col-lg-4.col-md-4
+          .thumbnail
+            .caption
+              %h4.pull-right $64.99
+              %h4
+                %a First Product
+              %p See more snippets 
+              .ratings
+                %p.pull-right 15 reviews
+            = link_to "Sign up", new_user_registration_path, class: "btn btn-primary signup" 
